@@ -8,6 +8,10 @@
 
  Happy coding! 💻
 
+ you can use following to show as options for mentions list 
+
+ Use data present in data.json as raw data for mention component.
+ 
 
  Bonus Points 🌟
 
