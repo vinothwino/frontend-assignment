@@ -14,10 +14,17 @@
 
  Use data present in data.json as raw data for mention component.
  
-
- Bonus Points 🌟
-
- - If you can add configurable animations to the component, that's fantastic! 🎭
- - Setting up a CI/CD pipeline that runs your test cases and checks for linting errors would be super impressive! 🚀
-
  Remember, we value creativity and initiative. Show us what you've got! 💪
+
+
+Judgement Criteria
+
+- Documentation
+- Functionality
+- Test cases
+- Code Organisation
+
+
+What we don't care about
+
+- Styles
