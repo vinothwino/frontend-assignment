@@ -6,7 +6,7 @@ Tech stack: React + Typescript
 Link to design: [Design](https://www.figma.com/file/EEmRktq44VPR3u8Lx7otOJ/Frontend-Assignment---Dropdown?type=design&t=YyUdu9qHBb3sS66T-6)
 
 Description
-This is similar to the @-mentions in X/Twitter. The user can type any text in the input element but when user types `@` then a select box should appear from which they can select an option and it should be displayed in input element. For example `Hi @Luke Skywalker may the force be with you.`. 
+This is similar to the @-mentions in X/Twitter. The user can type any text in the input element but when user types `@` then a select box should appear from which they can select an option and it should be displayed in input element. For example `Hi @Luke Skywalker may the force be with you.`. An `onChange` handler should be triggered with the input and the options selected, in a format of your choice.
  
 Instructions:
 
@@ -16,7 +16,7 @@ Instructions:
  
 What we look for:
 
-- Thinking: Are you able to think through edge cases?
+- Thinking: Are you able to think through the flow and edge cases?
 - Tests: How well is the code tested through unit/integration tests?
 - Documentation: How can anyone new run this app locally and contribute to it?
 - Code organisation: How are you organizing your components?
