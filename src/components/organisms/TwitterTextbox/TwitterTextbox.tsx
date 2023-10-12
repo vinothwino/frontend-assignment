@@ -36,9 +36,9 @@ const TwitterTextbox = () => {
     setText((text) => {
       return (
         text.substring(0, replaceAtStartPosition) +
-        " " +
+        // " " +
         e.target.value +
-        text.substring(replaceAtStartPosition + searchText.length + 2)
+        text.substring(replaceAtStartPosition + searchText.length + 1)
       );
     });
     setSearchText("");
@@ -48,7 +48,8 @@ const TwitterTextbox = () => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.keyCode === EVENT_CODE_AT_SYMBOL) {
       setOpenDropdown(true);
-      setReplaceStartPosition(text.length - 1);
+      const target = e.target as HTMLTextAreaElement;
+      setReplaceStartPosition(target.selectionStart);
       setSearchText("");
     } else if (validateSearchText(e.keyCode) && isOpenDropdown) {
       setSearchText((t) => t + e.key);
