@@ -10,7 +10,7 @@ import "./twitterTextbox.css";
 
 const TwitterTextbox = () => {
   const [text, setText] = useState("");
-  const [options, setOptions] = useState(DUMMY_OPTIONS);
+  const [options, setOptions] = useState([...DUMMY_OPTIONS]);
   const [isOpenDropdown, setOpenDropdown] = useState(false);
   const [replaceAtStartPosition, setReplaceStartPosition] = useState(0);
   const [searchText, setSearchText] = useState("");
