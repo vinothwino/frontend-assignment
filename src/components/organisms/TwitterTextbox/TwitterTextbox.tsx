@@ -17,20 +17,6 @@ const TwitterTextbox = () => {
 
   useEffect(() => {
     if (searchText.length > 0) {
-      console.log(
-        DUMMY_OPTIONS.filter((option) => {
-          console.log(
-            searchText,
-            option?.label.toLowerCase().includes(searchText?.toLowerCase()),
-            "text"
-          );
-          return (
-            !searchText ||
-            option?.label.toLowerCase().includes(searchText?.toLowerCase())
-          );
-        }),
-        "ptops"
-      );
       setOptions(
         DUMMY_OPTIONS.filter(
           (option) =>
