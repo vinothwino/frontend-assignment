@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./dropdown.css";
 
 type DropdownItem = {
   label: string;
@@ -10,24 +11,31 @@ type DropdownOptions = Array<DropdownItem>;
 interface IDropdownProps {
   className: string;
   options: DropdownOptions;
-  handleSelect: React.ChangeEventHandler<HTMLSelectElement>;
+  handleSelect: (selectedItem: string) => void;
 }
 
 const Dropdown: React.FunctionComponent<IDropdownProps> = (props) => {
   const { className, options, handleSelect } = props;
 
   const renderOptions = () =>
-    options.map((item, index) => (
-      <option key={index} value={item.value}>
+    options.map((item: DropdownItem, index) => (
+      <div
+        key={index}
+        className="dropdown-item"
+        onClick={() => handleSelect(item.value)}
+      >
         {item.label}
-      </option>
+      </div>
     ));
 
+  const renderEmptyMessage = () => (
+    <div className="dropdown-item">No results</div>
+  );
+
   return (
-    <select className={className} onChange={handleSelect}>
-      <option>Select</option>
-      {renderOptions()}
-    </select>
+    <div className={`dropdown ${className}`}>
+      {options.length ? renderOptions() : renderEmptyMessage()}
+    </div>
   );
 };
 

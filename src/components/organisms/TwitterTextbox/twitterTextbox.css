@@ -5,13 +5,6 @@
 .twitter-input-dropdown{
     position: absolute;
     left: 0;
-    bottom: -30px;
-    position: absolute;
-    left: 0;
-    padding: 0.5rem 1rem;
-    bottom: -50px;
-    outline: none;
-    border: 1px solid gainsboro;
-    background-color: white;
-    width: 300px;
+    bottom: -20px;
+    transform: translateY(100%);
 }

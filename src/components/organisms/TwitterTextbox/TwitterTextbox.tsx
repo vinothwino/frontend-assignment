@@ -30,14 +30,11 @@ const TwitterTextbox = () => {
     setText(e.target.value);
   };
 
-  const handleSelectedMentionTag = (
-    e: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleSelectedMentionTag = (selectedValue: string) => {
     setText((text) => {
       return (
         text.substring(0, replaceAtStartPosition) +
-        // " " +
-        e.target.value +
+        selectedValue +
         text.substring(replaceAtStartPosition + searchText.length + 1)
       );
     });
