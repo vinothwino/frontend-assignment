@@ -3,10 +3,11 @@ import TextInput from "../../atoms/TextInput";
 import {
   EVENT_CODE_AT_SYMBOL,
   DUMMY_OPTIONS,
-  NUMBER_CHARACTER_UNDERSCORE_REGEX,
+  BACKSPACE_KEY,
 } from "./twitterTextbox.constants";
 import Dropdown from "../../atoms/Dropdown";
 import "./twitterTextbox.css";
+import { validateSearchText } from "./twitterTextbox.helpers";
 
 const TwitterTextbox = () => {
   const [text, setText] = useState("");
@@ -16,15 +17,13 @@ const TwitterTextbox = () => {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    if (searchText.length > 0) {
-      setOptions(
-        DUMMY_OPTIONS.filter(
-          (option) =>
-            !searchText ||
-            option?.label.toLowerCase().includes(searchText?.toLowerCase())
-        )
-      );
-    }
+    setOptions(
+      DUMMY_OPTIONS.filter(
+        (option) =>
+          !searchText ||
+          option?.label.toLowerCase().includes(searchText?.toLowerCase())
+      )
+    );
   }, [searchText]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -51,9 +50,10 @@ const TwitterTextbox = () => {
       setOpenDropdown(true);
       setReplaceStartPosition(text.length - 1);
       setSearchText("");
-    }
-    if (NUMBER_CHARACTER_UNDERSCORE_REGEX.test(e.key) && isOpenDropdown) {
+    } else if (validateSearchText(e.keyCode) && isOpenDropdown) {
       setSearchText((t) => t + e.key);
+    } else if (e.key === BACKSPACE_KEY && isOpenDropdown) {
+      setSearchText((t) => t.slice(0, t.length - 1));
     }
   };
 

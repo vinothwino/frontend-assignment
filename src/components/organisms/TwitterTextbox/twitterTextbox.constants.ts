@@ -1,6 +1,7 @@
 import { DropdownOptions } from "../../atoms/Dropdown/Dropdown";
 
 export const EVENT_CODE_AT_SYMBOL = 50;
+export const BACKSPACE_KEY = 'Backspace';
 
 export const NUMBER_CHARACTER_UNDERSCORE_REGEX = /[A-Za-z_0-9]/;
 
